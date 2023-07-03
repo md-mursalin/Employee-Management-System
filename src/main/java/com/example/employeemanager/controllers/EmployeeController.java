@@ -15,6 +15,16 @@ import java.util.List;
 public class EmployeeController {
      final EmployeeService employeeService;
 
+    @GetMapping("/hi")
+    public String sahHi(){
+        return "Hi! everyone can see this";
+    }
+
+    @GetMapping("/admin-dashboard")
+    public String something(){
+        return "you are seeing this as an admin";
+    }
+
      @GetMapping("/all")
      public ResponseEntity<List<Employee>>findAll(){               //this will reach by "/employee/all"
          List<Employee>employees =employeeService.findAllEmp();
@@ -46,9 +56,6 @@ public class EmployeeController {
         return new ResponseEntity<>(HttpStatus.OK);
 
     }
-
-
-
 
 
 }
